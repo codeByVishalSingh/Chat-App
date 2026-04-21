@@ -23,3 +23,4 @@ export const protectRotes = async (req,res,next)=>{
         
     }
 }
+export default protectRotes;

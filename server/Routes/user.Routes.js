@@ -1,0 +1,15 @@
+import express from "express"
+import { checkAuth, login, signup, updateProfile } from "../controllers/UserContoller.js";
+import { protectRotes } from "../Middleware/auth.js";
+
+
+
+const userRouter = express.Router();
+
+
+userRouter.post("/signup", signup);
+userRouter.post("/login", login);
+userRouter.put("/update-profile", protectRotes,updateProfile);
+userRouter.get("/check", protectRotes, checkAuth);
+
+export default userRouter;
